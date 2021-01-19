@@ -1,0 +1,27 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200px 0;
+  box-sizing: border-box;
+}
+.app{
+
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+}
+.bg{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  /* background-image: linear-gradient(to left, rgba(255, 0, 149, 0.2), rgba(0, 247, 255, 0.2)), url(http://www.file.liyangit.top/liyangit/bg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; */
+}
+
+

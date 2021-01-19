@@ -1,0 +1,206 @@
+<view class="bg" style="background: url({{bgIms}});background-size: cover;"></view>
+<!--导航栏遮罩-->
+<view class="dhlZz" style="height:{{dhlHeight}}px;display:{{showDhl}};"></view>
+<view class="main">
+  <left-head  title="天气预报"></left-head>
+  <view class="main-head">
+    <view class="main-head-left">
+      <image src="../../../../static/cell/wz.png"></image>
+      <text>{{cs.name}}</text>
+    </view>
+    <view class="main-head-center" catchtap="showPopup">
+      <text>切换城市</text>
+    </view>
+    <view class="main-head-right" catchtap="reloadTq">
+      <van-icon name="replay" style="position: relative;top:2px;"/>刷新
+    </view>
+  </view>
+  <view class="main-content">
+    <!--温度-->
+    <view class="main-content-ds">
+      <view>
+        {{sktq.temp}}°
+      </view>
+    </view>
+    <!-- 当前天气图标和天气信息-->
+    <view class="main-content-icon">
+        <image src="../../../../static/tianqi-ico/{{sktq.icon}}.png" alt=""></image>
+        <text>{{sktq.text}}</text> 
+    </view>
+    <!-- 当前降水 湿度 等-->
+    <view class="main-content-pc">
+      <van-row style="color: #ced8e2;">
+        <van-col span="6">最高气温</van-col>
+        <van-col span="6">最低气温</van-col>
+        <van-col span="6">日出/日落</van-col>
+        <van-col span="6">月出/月落</van-col>
+      </van-row>
+      <view style="height: 10px;"></view>
+      <van-row>
+        <van-col span="6">{{qt[0].tempMax}}°</van-col>
+        <van-col span="6">{{qt[0].tempMin}}°</van-col>
+        <van-col span="6">{{qt[0].sunrise}}/{{qt[0].sunset}}</van-col>
+        <van-col span="6">{{qt[0].moonrise}}/{{qt[0].moonset}}</van-col>
+      </van-row>
+      <view style="height: 10px;"></view>
+      <van-row style="color: #ced8e2;">
+        <van-col span="6">降水</van-col>
+        <van-col span="6">湿度</van-col>
+        <van-col span="6">{{sktq.windDir}}</van-col>
+        <van-col span="6">气压</van-col>
+      </van-row>
+      <view style="height: 10px;"></view>
+      <van-row>
+        <van-col span="6">{{sktq.precip}}mm</van-col>
+        <van-col span="6">{{sktq.humidity}}%</van-col>
+        <van-col span="6">{{sktq.windScale}}级</van-col>
+        <van-col span="6">{{sktq.pressure}}hpa</van-col>
+      </van-row>
+
+    </view>
+    <!--降雨-->
+    <view class="main-content-jy">
+      <van-row gutter="10" catchtap="showJyXx">
+        <van-col style="text-align: right;" span="3">
+          <image src="../../../../static/tianqi-ico/jy.png" style="width: 30px;height: 30px;"></image>
+        </van-col>
+        <van-col span="15">{{jy.summary}}</van-col>
+        <van-col style="text-align: center;color: #ced8e2;font-size: 13px;" span="6">{{shJyText}}</van-col>
+      </van-row>
+      <view style="opacity:{{opacityJy}};display:{{shDispJy}};" class="shJy">
+        <van-row wx:for="{{jy.minutely}}" wx:for-item="item"  wx:for-index="index" style="font-size: 14px;color: #ced8e2;text-align: center;">
+          <van-col span="8">预报时间：<text>{{ m.jyTime(item.fxTime)}}</text></van-col>
+          <van-col span="8">降水量：  <text>{{ m.jsl(item.precip)}}</text>mm</van-col>
+          <van-col span="8">降水类型：<text>{{ m.jyType(item.type)}}</text></van-col>
+        </van-row>
+      </view>
+    </view>
+    <!--24 小时天气预报-->
+    <view class="main-content-h24">
+      <view class="main-content-title-head">
+        24小时预报
+      </view>
+      <view class="main-content-h24-content">
+        <view wx:for="{{h24}}" wx:for-item="item2" wx:for-index="index2">
+            <text class="time">{{m.h24Hours(item2.fxTime)}}</text>
+            <image class="icon" src="../../../../static/tianqi-ico/{{item2.icon}}.png"></image>
+            <text class="wd">{{item2.temp}}°</text>
+        </view>
+      </view>
+    </view>
+    <!-- 七天 天气预报-->
+    <view style="position: relative;margin-bottom: 80px;">
+      <view class="main-content-title-head">
+        七天预报
+      </view>
+      <view style="font-size: 14px;color:#ced8e2;">
+        <van-row wx:for="{{qt}}" wx:for-index="index3" wx:for-item="item3">
+          <van-col span="24">
+            <text style="margin-left: 10px;">{{m.qtTime(item3.fxDate)}}</text>
+            <text style="margin-left: 5px;">{{m.qtZj(item3.fxDate)}}</text>
+            <image style="margin-left: 10px;position: relative;top: 10px;width: 30px;height: 30px;" src="../../../../static/tianqi-ico/{{item3.iconDay}}.png"></image>
+            <text style="margin-left: 5px;color: white;font-size: 16px;">{{item3.textDay}}</text>
+            <text style="margin-left: 20px;">最高:</text>
+            <text style="color: white;font-size: 15px;margin-left: 5px;">{{item3.tempMax}}°</text>
+            <text style="margin-left: 10px;">最低:</text>
+            <text style="color: white;font-size: 15px;margin-left: 5px;">{{item3.tempMin}}°</text>
+          </van-col>
+        </van-row>
+      </view>
+    </view>
+  </view>
+</view>
+<van-popup show="{{ showPopup }}" round  safe-area-inset-top  position="bottom" custom-style="padding: 20px;height: 70vh;padding: 10px 0px;" bind:close="onClose">
+  <view class="popup">
+    <van-search
+      value="{{ value }}"
+      placeholder="请输入搜索城市关键词"
+      use-action-slot
+      bind:change="onChange"
+      bind:search="onSearch">
+        <view slot="label" style="font-size: 14px;position: relative;top: 5px;margin-right: 10px;">
+          当前城市: <text style="font-size:18px;"> {{cs.name}}</text>
+        </view>
+    </van-search>
+    <view style="height: 400px;overflow: auto;">
+      <van-cell-group clickable="{{true}}" border="{{false}}" >
+        <van-cell wx:for="{{citys}}" wx:for-item="item4" wx:for-index="index4" data-text="{{item4}}" bindtap="loadQTQ">
+          <view slot="title">
+            <view class="van-cell-text" style="text-align: right;">
+              <text style="font-size: 15px;">{{item4.name}}</text>
+              <text style="margin-left: 10px;color: #ababaf;">- {{item4.adm2}}</text>
+            </view>
+          </view>
+        </van-cell>
+      </van-cell-group>
+    </view>
+
+  </view>
+</van-popup>
+<wxs module="m">
+  var jyTime = function(timeStr){
+    var array = timeStr.split('T');
+    var array2 = array[1].split('+');
+    return array2[0];
+  };
+  var qtTime = function(str){
+    var s = str.substring(str.indexOf('-')+1);
+    return s;
+    
+  };
+  var qtZj = function(str){
+    var day = getDate(str).getDay();
+    var s = undefined;
+    if(day == 0){
+      s = '星期天';
+    }else if(day == 1){
+      s = '星期一'
+    }else if(day == 2){
+      s = '星期二'
+    }else if(day == 3){
+      s = '星期三'
+    }else if(day == 4){
+      s = '星期四'
+    }else if(day == 5){
+      s = '星期五'
+    }else if(day == 6){
+      s = '星期天'
+    };
+    return s;
+  };
+  var jyType = function(str){
+    var s = undefined;
+    if(str == "rain"){
+      s = '雨';
+    }else{
+      s = '雪';
+    }
+    return s;
+  };
+  var jsl = function(str){
+    var s = undefined;
+    if(str == '0.0'){
+      s = '无';
+    }else{
+      s = str;
+    }
+    return s;
+  };
+  var h24Hours = function(str){
+    var array = str.split('T');
+    var array2 = array[1].split(':');
+    var s = undefined;
+    if(array2[0] == '00'){
+      s = '明天';
+    }else{
+      s = array2[0]+'点';
+    }
+    return s;
+  };
+  module.exports.jyTime = jyTime;
+  module.exports.jyType = jyType;
+  module.exports.h24Hours = h24Hours;
+  module.exports.jsl = jsl;
+  module.exports.qtTime = qtTime;
+  module.exports.qtZj = qtZj;
+</wxs>

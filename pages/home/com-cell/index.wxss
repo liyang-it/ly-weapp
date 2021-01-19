@@ -1,0 +1,68 @@
+
+/*iPhone X 以下*/
+@media screen and (max-width: 376px){
+  .cc .cc-cell{
+    width: 46.8%;
+    height: 60px;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin: 5.0px;
+    float: left;
+  }
+}
+/*iPhone XR 以上*/
+@media screen and (min-width: 400px){
+  .cc .cc-cell{
+    width: 46.8%;
+    height: 60px;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin: 6.5px;
+    float: left;
+  }
+}
+.cc-cell-img {
+  width: 40px;
+  height: 40px;
+  line-height: 5;
+  margin-left: 3px;
+}
+.cc-cell-title {
+  font-size: 15px;
+  -webkit-text-stroke-width: medium;
+  font-family: cursive;
+  position: relative;
+  left: 60px;
+  top: -33px;
+  overflow: hidden;
+}
+.cc-cell-desc {
+  position: relative;
+  left: 50px;
+  font-size: 12px;
+  top: -30px;
+  overflow: hidden;
+  word-spacing: unset;
+  animation-fill-mode: backwards;
+  text-decoration: underline;
+  -webkit-text-stroke-width: thin;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 70%;
+}
+.cc-cell-img image{
+  width: 100%;
+  height: 100%;
+}
+.bottom_text{
+  position: relative;
+  top: 20px;
+  clear: both;
+  text-align: center;
+}
+.bottom_text text{
+  padding: 10px;
+  font-size: 12px;
+  text-align: center;
+  color: #B3B3B3;
+}

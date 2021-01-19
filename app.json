@@ -1,0 +1,43 @@
+{
+  "pages": [
+    
+    "pages/home/index",
+    "pages/me/index",
+    "pages/me/liyang/index",
+    "pages/home/pages/page-api/index",
+    "pages/home/pages/page-img/index",
+    "pages/home/pages/page-tq/index",
+    "pages/home/pages/page-pl/index",
+    "pages/home/pages/page-v/index",
+    "pages/home/pages/page-v/vv7/index"
+    
+    
+  ],
+  "tabBar": {
+    "borderStyle": "white",
+    "selectedColor": "#271B58",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "iconPath": "/static/tabbar/zy.png",
+        "selectedIconPath": "/static/tabbar/zy-s.png",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/me/index",
+        "iconPath": "/static/tabbar/gy.png",
+        "selectedIconPath": "/static/tabbar/gy-s.png",
+        "text": "关于"
+      }
+    ]
+  },
+  "window": {
+    "navigationStyle": "custom"
+  },
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "位置信息将用于获取天气信息"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "left-head": "../../../../components/left-head/index",
+    "van-icon": "@vant/weapp/icon/index"
+  }
+}

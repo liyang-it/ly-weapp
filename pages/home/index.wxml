@@ -1,0 +1,19 @@
+
+<van-notify id="van-notify" />
+<view style="height:{{navHeight }}px;background-color: {{bgColor}};position: fixed;width: 100%;z-index: 2;">
+  <view style="margin-top:{{top}}px;" class="tq">
+    <image src="../../static/cell/wz.png"></image>
+    <text>{{cs.adm1}}</text>
+    <text>{{cs.name}}</text>
+    <image src="../../static/tianqi-ico/{{tq.icon}}.png" alt=""></image>
+    <text>{{tq.text}}</text>
+    <text>{{tq.temp}}°</text>
+    <text>{{tq.windDir}}</text>
+  </view>
+</view>
+<view class="main" style="margin-top: {{navHeight }}px;">
+  <view class="content">
+    <com-cell></com-cell>
+  </view>
+</view>
+<rmpl></rmpl>

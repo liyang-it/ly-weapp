@@ -1,0 +1,37 @@
+
+<view class="main" style="">
+  <left-head></left-head>
+  <view class="bg" style="height:{{bgImgHeight}}px;">
+    <image src="http://www.file.liyangit.top/weapp/v-bg.jpg"></image>
+  </view>
+  <view class="pl" style="top: {{bgImgHeight - 50}}px;">
+    <view class="btn" >
+      <view class="search" style="width:{{searchWidth}}px;">
+        <input placeholder="大江大河2" value="{{search}}" bindinput="inputSearch"/>
+        <van-icon size="20px" name="cross" style="position: absolute;top:5px;right:6px;display:{{iconClear}};" catchtap="clearSearch"/>
+      </view>
+      <van-icon size="23px" name="search" style="position: absolute;top:5px;right: 100px; " catchtap="okSearch"/>
+      <text catchtap="reloadPl" catchtap="okSearch">搜索一下</text>
+    </view>
+  </view>
+  <view class="result" style="top: {{bgImgHeight}}px;height: {{resultHeight}}px;">
+    <view class="result-content" wx:for="{{vs}}" catchtap="openV" data-item="{{item}}">
+      <view class="result-content-pic">
+        <van-image width="100" height="120" src="{{item.pic}}" lazy-load  use-error-slot>
+          <text slot="error">封面加载失败</text>
+          <van-loading slot="loading" type="spinner" size="20" vertical />
+        </van-image>
+      </view>
+      <view class="result-content-content">
+        <text style="text-decoration: underline;font-size: 16px;font-weight: bold;display: block;position: relative;top: 5px;">{{item.name}}</text>
+        <text style="font-weight: bold;display: block;position: relative;top: 15px;font-size: 13px;">{{item.type}}</text>
+        <text style="font-weight: bold;position: relative;top: 25px;font-size: 13px;">{{item.label}}</text>
+      </view>
+    </view>
+    <view class="more" hidden="{{vs.length == 0}}" catchtap="moreVs">
+      <view>
+        加载更多
+      </view>
+    </view>
+  </view>
+</view>

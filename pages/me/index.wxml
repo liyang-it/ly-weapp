@@ -1,0 +1,18 @@
+
+<view class="app">
+  <view style="height:{{navHeight}}px;background-color: {{bgColor}};"></view>
+  <view class="content"></view>
+    <view class="gy" style="top:{{height}}px;">
+    <image src="../../static/logo.png" class="gy_log"></image>
+    <view class="gy_content">
+      <van-cell  value="进入" bind:tap="toPage" data-text="/pages/me/liyang/index">
+        <view slot="title">
+          <span class="custom-title" style="font-size: 15px;font-weight: bold;">关于我</span>
+        </view>
+      </van-cell>
+    </view>
+    <view class="sp">
+      <span>此小程序仅供学习，所有资源来自互联网。</span>
+    </view>
+  </view>
+</view>

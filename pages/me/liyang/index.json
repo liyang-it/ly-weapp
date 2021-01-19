@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "left_head":"../../../components/left-head/index",
+    "card":"../liyang/coms-card/index",
+    "cmd":"../liyang/coms-cmd/index"
+  }
+}

@@ -1,0 +1,23 @@
+<left-head bgColor="{{bgColor}}" title="图像识别"></left-head>
+<canvas id="canvas"></canvas>
+<view class="" style="margin-top:20px;">
+  <view class="main-desc">
+    当前识别项:<span>{{sbText}}</span>
+  </view>
+  <view class="main-img">
+    <image src="{{defaultImg}}"></image>
+  </view>
+  <view style="text-align: center;margin-top: 20px;margin-bottom: 10px;">
+    <van-button hairline round  plain type="warning" custom-style="width: 250px;" bindtap="showSb">切换识别项</van-button>
+    <van-action-sheet show="{{ show }}"  actions="{{ actions }}" bind:close="onClose" bind:select="onSelect"/>
+  </view>
+  <view style="text-align: center;margin-top: 20px;margin-bottom: 10px;">
+    <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead">
+      <van-button hairline round  plain type="info" custom-style="width: 250px;">选择图片</van-button>
+    </van-uploader>
+  </view>
+  <view style="margin: 10px;font-size: 16px;font-weight: bold;font-family: cursive;">
+    <text>{{sbResult}}</text>
+  </view>
+
+</view>

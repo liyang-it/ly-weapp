@@ -1,0 +1,24 @@
+
+<view class="main" style="">
+  <left-head></left-head>
+  <view class="bg" style="height:{{bgImgHeight}}px;">
+    <image src="http://www.file.liyangit.top/weapp/v-bg.jpg"></image>
+  </view>
+
+  <view class="pl" style="margin-top: {{bgImgHeight - 60}}px;">
+    <view class="btn" >
+      <text style="left: 20px;font-size: 18px;">网易云热门评论</text>
+      <van-icon name="replay" style="position: absolute;top:2px;right: 80px;"/><text catchtap="reloadPl">换一条</text>
+    </view>
+    <view class="content" style="-webkit-line-clamp: {{plLineClamp}};">
+      <text catchtap="copyContent">{{pl.content}}</text>
+    </view>
+    <view style="display: none;text-align: center;margin-top: 10px;font-size: 14px;color: #b5acac;" catchtap="showGd">
+      显示所有
+    </view>
+    <view class="user">
+      <text>来自于网易云用户——{{pl.username}}</text>
+      <text>在《{{pl.song}}》歌曲下方的评论</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "left-head":"../../components/left-head/index",
+    "com-cell":"../home/com-cell/index",
+    "van-notify": "@vant/weapp/notify/index",
+    "rmpl":"../../components/rmpl/index"
+  }
+}

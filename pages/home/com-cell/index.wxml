@@ -1,0 +1,49 @@
+
+<view class="cc">
+  <view class="cc-cell" bindtap="toPage" data-page="/pages/home/pages/page-img/index">
+    <view class="cc-cell-img">
+      <image src="../../../static/cell/shibie.png"></image>
+    </view>
+    <view class="cc-cell-title">图像识别</view>
+    <view class="cc-cell-desc">上传图片可识别生活常见物品</view>
+  </view>
+  <view class="cc-cell" bindtap="toPage" data-page="/pages/home/pages/page-tq/index">
+    <view class="cc-cell-img">
+      <image src="../../../static/cell/tianqi.png"></image>
+    </view>
+    <view class="cc-cell-title">天气预报</view>
+    <view class="cc-cell-desc">查看天气预报信息</view>
+  </view>
+  <view class="cc-cell" bindtap="toPage" data-page="/pages/home/pages/page-pl/index">
+    <view class="cc-cell-img">
+      <image src="../../../static/cell/pl.png"></image>
+    </view>
+    <view class="cc-cell-title">网易云热门评论</view>
+    <view class="cc-cell-desc">网易云热门评论</view>
+  </view>
+  <view class="cc-cell" bindtap="openMusicWeapp" >
+    <view class="cc-cell-img">
+      <image src="../../../static/cell/music.png"></image>
+    </view>
+    <view class="cc-cell-title">柠檬酸音乐</view>
+    <view class="cc-cell-desc">没有更多的介绍</view>
+  </view>
+  <view class="cc-cell" bindtap="toPage" data-page="/pages/home/pages/page-v/index">
+    <view class="cc-cell-img">
+      <image src="../../../static/cell/video.png"></image>
+    </view>
+    <view class="cc-cell-title">柠檬酸追剧吧</view>
+    <view class="cc-cell-desc">剧集介绍,简介评分</view>
+  </view>
+  <view class="cc-cell" bindtap="notPage" data-page="/pages/home/pages/page-api/index">
+    <view class="cc-cell-img">
+      <image src="../../../static/cell/shuiyin.png"></image>
+    </view>
+    <view class="cc-cell-title">短视频去水印</view>
+    <view class="cc-cell-desc">视频去除水印,支持抖音</view>
+  </view>
+
+</view>
+<view class="bottom_text">
+  <text>正在新增更多好玩功能中...</text>
+</view>

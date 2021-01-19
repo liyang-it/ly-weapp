@@ -1,0 +1,38 @@
+<view class='cmd' >
+  <view class="right-cmd" id="cmd1" style="  opacity: {{opacity}};">
+    <view class="right-cmd-head" >{{title}}</view>
+    <view class="right-cmd-content">
+      <view>
+        <span>{{label}}</span>
+        <span class="command">./tianqi.sh</span>
+      </view>
+      <span class="command">实况天气:</span>
+      <view style="margin-top: -10px;margin-bottom: 13px;">
+        <view wx:for="{{tianqi}}" class="tianqi" >
+          <span>{{item.city}}</span>
+          <image src="../../../../static/tianqi-ico/{{item.value.now.icon}}.png" alt=""></image>
+          <span>{{item.value.now.text}}</span>
+          <span>{{item.value.now.temp}}°</span>
+          <span>{{item.value.now.windDir}}</span>
+        </view>
+      </view>
+
+      <view>
+        <span>{{label}}</span><span class="command">cat 其他站点.txt</span>
+      </view>
+        <ul>
+          <li bindtap="copyLink" data-link="https://github.com/liyang-it"><view><span>GitHub</span></view></li>
+          <li bindtap="copyLink" data-link="https://blog.csdn.net/qq_40739917"><view><span>CSDN博客</span></view></li>
+          <li bindtap="copyLink" data-link="https://www.cnblogs.com/liyangit-bky"><view><span>博客园</span></view></li>
+          <li bindtap="copyLink" data-link="https://www.liyangit.top/jy"><view><span>简语</span></view></li>
+          <li >
+            <view>
+              <span>网抑云音乐:</span>
+              <span style="margin: 20px;" bindtap="copyLink" data-link="https://www.liyangit.top/wyy">Vue版</span>
+              <span bindtap="openWeapp">小程序版</span>
+            </view>
+          </li>
+        </ul>
+    </view>
+  </view>
+</view>

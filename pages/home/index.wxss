@@ -1,0 +1,24 @@
+/* pages/home/index.wxss */
+.content{
+  padding: 10px 0px;
+}
+.main{
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+.tq{
+  color: white;
+  margin-left: 15px;
+}
+.tq text{
+  margin: 3px;
+  font-size: 13px;
+}
+.tq image{
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 5px;
+}

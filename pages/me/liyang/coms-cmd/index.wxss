@@ -1,0 +1,73 @@
+view{
+  font-family: 'Fira Code', monospace;
+}
+.right-cmd{
+  width: 90%;
+  height: 340px;
+  margin-left: 0;
+  margin-right: 0;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: rgb(54, 52, 52);
+}
+
+.right-cmd{
+  /* transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear; */
+
+  overflow: hidden;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.right-cmd:hover{
+  box-shadow: 0px 0px 10px 5px rgb(141, 138, 138);
+}
+.right-cmd-head{
+  width: 100%;
+  height: 30px;
+  color: white;
+  text-align: center;
+  line-height: 32px;
+  cursor: Move;
+}
+
+.right-cmd-content{
+  width: 100%;
+  color: rgb(54, 52, 52);
+  background-color:rgb(235, 232, 232);
+  height: 100%;
+  cursor: text;
+}
+.right-cmd-content ul{
+  margin-top: 2px;
+
+}
+.right-cmd-content ul li{
+  cursor: pointer;
+}
+.right-cmd-content ul li view{
+  padding: 5px 10px;
+}
+.right-cmd-content li span:hover{
+  color:rgb(56, 166, 240);
+}
+.right-cmd-content .command{
+  font-weight: bold;
+}
+.right-cmd-content .tianqi {
+  padding: 0px 10px;
+  height: 25px;
+  cursor: pointer;
+}
+.tianqi image{
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 8px;
+}
+.tianqi:hover{
+  text-decoration: underline;
+  color:rgb(56, 166, 240);
+}
