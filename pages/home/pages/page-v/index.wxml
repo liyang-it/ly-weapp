@@ -1,4 +1,5 @@
-
+<!-- 备份
+<--
 <view class="main" style="">
   <left-head></left-head>
   <view class="bg" style="height:{{bgImgHeight}}px;">
@@ -34,4 +35,60 @@
       </view>
     </view>
   </view>
+</view> -->
+<view class="bg">
+  <image src="http://www.file.liyangit.top/weapp/video_bg.png"></image>
+</view>
+ <!-- 点击返回到顶部按钮 -->
+<view class="goTop" bindtap="goTop" style="display:{{showDhl}}">
+  <image src="../../../../static/go-top.png"></image>
+</view>
+<view class="main2">
+  <left-head></left-head>
+  <!--导航栏遮罩-->
+  <view class="dhlZz" style="height:{{dhlHeight}}px;display:{{showDhl}};"></view>
+  <view class="logo">
+    <image src="http://www.file.liyangit.top/weapp/video_logo.png"></image>
+  </view>
+    <view class="wrap">
+      <view class="search">
+          <input  value="{{search}}" class="searchTerm" placeholder="想搜索什么?" bindinput="inputSearch"/>
+          <button type="submit" class="searchButton" catchtap="query_btn">
+            <van-icon name="search" class="searchIco"/>
+        </button>
+      </view>
+    </view>
+    <view class="list">
+      <view class="list-content" wx:for="{{vs}}" wx:for-item="item" wx:for-index="index" 
+      bindtap="openV" data-id="{{item.id}}">
+        <view class="list-content-pic">
+          <van-image  lazy-load width="80" height="100" src="{{item.pic}}" use-loading-slot use-error-slot fit="fill">
+            <text slot="loading">加载中</text>
+            <text slot="error">加载失败</text>
+          </van-image>
+        </view>
+        <view class="list-content-desc">
+          <view class="list-content-desc-cell" style="top: -106px;font-size: 16px;">
+            <text>{{item.name}}<text style="color: #888;">({{item.year}})</text></text>
+          </view>
+          <view class="list-content-desc-cell" style="top: -80px;">
+            <text>类型：<text style="color: #37a;">{{item.type}}</text></text>
+          </view>
+          <view class="list-content-desc-cell" style="top: -60px;">
+            <text>国家/地区：<text style="color: #37a;">{{item.area}}</text></text>
+          </view>
+          <view class="list-content-desc-cell" style="top: -40px;">
+            <text>语言：<text style="color: #37a;">{{item.lang}}</text></text>
+          </view>
+          <view class="list-content-desc-cell" style="top: -20px;background-color: #f2edf6;color: #ac36e3;padding: 2px 5px;font-size: 12px;">
+            <text>{{item.remarks}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="more" hidden="{{vs.length == 0}}" catchtap="append_btn">
+      <view>
+        加载更多
+      </view>
+    </view>
 </view>

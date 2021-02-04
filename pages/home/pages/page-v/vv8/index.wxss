@@ -1,0 +1,77 @@
+/* pages/home/pages/page-v/vv7/index.wxss */
+@import "../../../../../wxParse/wxParse.wxss";
+.main{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #263D43;
+  overflow: auto;
+}
+.videoIdv{
+  width: 100%;
+}
+.videoIdv video{
+  width: 100%;
+  height: 250px;
+}
+.desc{
+  padding: 5px 10px;
+  color: white;
+}
+@media screen and (max-width: 375px){
+  .jj{
+    color: white;
+    padding: 0px 13px;
+  }
+  .jj .jj2{
+    /* float: left; */
+    /* width: 60px; */
+    /* text-align: center;
+    border: 1px solid;
+    border-radius: 10px;
+    margin: 5px; */
+    text-align: center;
+    margin-bottom: 10px;
+    height: 30px;
+    text-decoration: underline;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 413px){
+  .jj{
+    color: white;
+    padding: 0px 2px;
+  }
+  .jj .jj2{
+    /* text-align: center;
+    /* border: 1px solid; */
+    /* border-radius: 10px; */
+    /* margin: 20px; 
+    margin-bottom: 10px;
+    height: 30px; 
+    */
+    text-align: center;
+    margin-bottom: 10px;
+    height: 30px;
+    text-decoration: underline;
+  }
+}
+@media screen and (min-width: 414px){
+  .jj{
+    color: white;
+    padding: 0px 20px;
+  }
+  .jj .jj2{
+    /* float: left; */
+    /* width: 70px; */
+    /* text-align: center;
+    border: 2px solid;
+    border-radius: 10px;
+    margin: 5px; */
+    text-align: center;
+    margin-bottom: 10px;
+    height: 30px;
+    text-decoration: underline;
+  }
+}
+
