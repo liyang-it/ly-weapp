@@ -66,8 +66,10 @@ Page({
       },2000)
     }
   },
+  // 切换剧集
   bf(e){
     let index = e.currentTarget.dataset.index
+    this.changeBtnSty(index,this)
     this.setData({d2:this.data.vss[index].key,src: this.data.vss[index].value,bfIndex: index})
     wx.showLoading({
       title: '请稍等...',
@@ -77,6 +79,17 @@ Page({
       wx.hideLoading()
     },2000)
     
+  },
+  // 改变剧集的时候 改变当前按钮样式
+  changeBtnSty(index,t){
+    let vss = t.data.vss
+    for(let i = 0; i < vss.length; i++){
+      vss[i].bgColor = 'white'
+      vss[i].txtColor = 'black'
+    }
+    vss[index].bgColor = '#ff976a'
+    vss[index].txtColor = 'white'
+    t.setData({vss: vss})
   },
   /**
    * 生命周期函数--监听页面加载
@@ -120,10 +133,15 @@ Page({
                 for(let i = 0;i< urls.length;i++){
                   let plays = urls[i].split('$')
                   let object = new Object()
-                  object.key = '线路一:' + plays[0]
+                  // object.key = '线路一:' + plays[0]
+                  object.bgColor = 'white'
+                  object.txtColor = 'black'
+                  object.key = plays[0]
                   object.value = plays[1]
                   vvs.push(object)
                 }
+                vvs[0].bgColor = '#ff976a'
+                vvs[0].txtColor = 'white'
               }
                 t.setData({
                   src: vvs[0].value,
@@ -149,12 +167,13 @@ Page({
   },
   isDescF:function(){
     let t = this
-    t.setData({isDesc: !t.data.isDesc})
     if(t.data.isDesc == true){
       t.setData({descHeight: ''})
     }else{
       t.setData({descHeight: '72'})
     }
+    t.setData({isDesc: !t.data.isDesc})
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
