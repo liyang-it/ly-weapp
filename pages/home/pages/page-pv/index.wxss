@@ -1,0 +1,60 @@
+.bg{
+  background-image: linear-gradient( 135deg, #CE9FFC 10% 100%);
+  position: fixed;
+  z-index: 1;
+}
+.content{
+  z-index: 2;
+  position: relative;
+  width: 90%;
+  background-color: white;
+  margin: 0 auto;
+  top: 60px;
+  border-radius: 20px;
+  padding: 5px;
+}
+.content .content-title{
+  margin-top: 10px;
+  font-weight: bolder;
+  margin-bottom: 10px;
+  font-size: 20px;
+  text-align: center;
+}
+.content-tip{
+  margin-bottom: 10px;
+}
+.content-tip strong{
+  font-weight: bolder;
+  font-size: 14px;
+  margin-right: 5px;
+}
+.content-tip p{
+  color: #807e88;
+  font-size: 14px;
+  font-family: Roboto,Noto,Helvetica,Arial,sans-serif;
+}
+.content-link textarea{
+  width: 95%;
+  border: 1px solid #1989fa;
+  border-radius: 10px;
+  padding: 5px;
+  height: 100px;
+}
+.content-btn{
+  margin-top: 20px;
+  text-align: center;
+}
+.btn{
+  display: inline;
+  padding: 8px 20px;
+  margin: 10px;
+}
+.info{
+  background-color: #1989fa;
+  color: white;
+  border-radius: 3px;
+}
+.default{
+  border: 0.5px solid #dcd8e0;
+  border-radius: 3px;
+}

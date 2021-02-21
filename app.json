@@ -7,9 +7,8 @@
     "pages/home/pages/page-img/index",
     "pages/home/pages/page-tq/index",
     "pages/home/pages/page-pl/index",
-    "pages/home/pages/page-v/index"
-    
-    
+    "pages/home/pages/page-v/index",
+    "pages/home/pages/page-pv/index"
   ],
   "tabBar": {
     "borderStyle": "white",

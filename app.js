@@ -1,6 +1,14 @@
 // app.js
 App({
   onLaunch() {
+    //     // 获取随机颜色
+    // wx.request({
+    //       url: 'https://tenapi.cn/color/',
+    //       success:(res)=>{
+    //         this.bgColor = res.data
+    //         console.info(this.bgColor)
+    //       }
+    //     })
     // 获取右上角胶囊定位信息
     let nav = wx.getMenuButtonBoundingClientRect()
     this.navObj.top = nav.top

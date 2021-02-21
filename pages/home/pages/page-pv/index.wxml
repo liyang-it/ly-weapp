@@ -1,0 +1,28 @@
+
+<view class="bg">
+  <left-head></left-head>
+</view>
+<view class="content" style="top:{{navHeight}}px;height: {{cHeight}};margin-bottom: {{cBottom}}px;">
+  <view class="content-title"><p>柠檬酸短视频去水印解析</p></view>
+  <view class="content-tip">
+    <strong>目前支持:</strong><p>抖音/皮皮虾/火山/微视/微博/绿洲/最右/轻视频/instagram/哔哩哔哩/快手/全民小视频/皮皮搞笑/全民k歌/巴塞电影/陌陌/Before避风/开眼/Vue Vlog/小咖秀</p>
+  </view>
+  <view class="content-tip">
+    <strong>温馨提示:</strong><p>粘贴视频地址时请保留文字粘贴，但如果视频链接正确但解析失败请删掉文字只保留链接后重试</p>
+  </view>
+  <view class="content-tip">
+    <strong>温馨提示: 微信不允许保存超过50MB大小的文件，如需要保存 请复制无水印视频链接至浏览器进行保存</strong>
+  </view>
+  <view class="content-link">
+    <textarea placeholder="请粘贴视频分享链接" bindinput="getTextAreaValue" value="{{value}}"></textarea>
+  </view>
+  <view class="content-btn">
+    <view class="btn info" catchtap="jx">一键去水印</view>
+    <view class="btn default" catchtap="parse_clear">{{defaultTitle}}</view>
+  </view>
+  <view class="content-btn" style="margin-bottom: 20px;height:{{jxHeight}}px;overflow: hidden;">
+    <video style="width: 100%;height: 200px;" src="{{src}}"></video>
+    <view class="btn info" style="display: block;" catchtap="saveVideo">保存视频</view>
+    <view class="btn default" style="display: block;" catchtap="copyVideo">复制链接</view>
+  </view>
+</view>

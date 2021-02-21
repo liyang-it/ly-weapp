@@ -35,7 +35,7 @@
     <view class="cc-cell-title">柠檬酸追剧吧</view>
     <view class="cc-cell-desc">剧集介绍,简介评分</view>
   </view>
-  <view class="cc-cell" bindtap="notPage" data-page="/pages/home/pages/page-api/index">
+  <view class="cc-cell" bindtap="toPage" data-page="/pages/home/pages/page-pv/index">
     <view class="cc-cell-img">
       <image src="../../../static/cell/shuiyin.png"></image>
     </view>
