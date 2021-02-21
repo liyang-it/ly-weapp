@@ -3,7 +3,7 @@
   <view style="height:{{navHeight}}px;background-color: {{bgColor}};"></view>
   <view class="content"></view>
     <view class="gy" style="top:{{height}}px;">
-    <image src="../../static/logo.png" class="gy_log"></image>
+    <image src="http://www.file.liyangit.top/weapp/me_logo.png" class="gy_log"></image>
     <view class="gy_content">
       <van-cell  value="进入" bind:tap="toPage" data-text="/pages/me/liyang/index">
         <view slot="title">
